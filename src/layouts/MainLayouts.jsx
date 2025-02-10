@@ -11,12 +11,14 @@ const MainLayouts = () => {
 
     return (
         <div className={`min-h-screen ${theme === 'dark' ? 'bg-gray-800 text-white' : 'bg-green-50 text-gray-900'}`}>
+            {/* navbar  */}
             <Navbar></Navbar>
 
             <main className="min-h-screen">
                 <Outlet></Outlet>
             </main>
 
+            {/* footer */}
             <Footer></Footer>
         </div>
     );
