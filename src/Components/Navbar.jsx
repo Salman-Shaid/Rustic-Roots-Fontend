@@ -21,7 +21,7 @@ const Navbar = () => {
     { path: "/aboutUs", label: "About Us" },
   ];
   
-  // Conditionally add "My Orders" if the user is logged in
+  
   if (user) {
     navLinks.push({ path: "/myOrders", label: "My Orders" });
   }
@@ -31,9 +31,9 @@ const Navbar = () => {
       className={`sticky top-0 z-50 shadow-lg ${theme === "dark" ? "bg-gray-900 text-white" : "bg-green-800 text-white"} transition-all duration-300 ease-in-out`}
     >
       <div className="navbar container mx-auto p-4 flex justify-between">
-        {/* Left Section - Logo & Mobile Menu */}
+        
         <div className="flex items-center gap-2">
-          {/* Mobile Menu */}
+       
           <div className="dropdown lg:hidden">
             <label tabIndex={0} className="btn btn-ghost" aria-label="Menu">
               <svg
@@ -67,7 +67,7 @@ const Navbar = () => {
           </NavLink>
         </div>
 
-        {/* Center Section - Desktop Navigation Links */}
+        
         <div className="hidden lg:flex">
           <ul className="menu menu-horizontal gap-6">
             {navLinks.map(({ path, label }, index) => (
@@ -85,9 +85,8 @@ const Navbar = () => {
           </ul>
         </div>
 
-        {/* Right Section - Theme Toggle & User Profile */}
         <div className="flex items-center gap-4">
-          {/* Theme Toggle Button */}
+          
           <label className="flex cursor-pointer gap-2 items-center">
             <input
               type="checkbox"
@@ -99,7 +98,7 @@ const Navbar = () => {
             />
           </label>
 
-          {/* Conditional User Section */}
+         
           {user ? (
             <div className="dropdown dropdown-end font-semibold">
               <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
