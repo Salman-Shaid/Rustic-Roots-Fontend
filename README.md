@@ -1,4 +1,4 @@
-# Rustic Roots Client
+# Rustic Roots 
 
 This is the client-side application for the **Rustic Roots** restaurant management system.
 
@@ -16,7 +16,7 @@ This is the client-side application for the **Rustic Roots** restaurant manageme
 - **Order Management**:
   - Place orders for food items.
   - View my order .
-  - Show by user email.
+  - Show order by user email.
 
 - **Dynamic Features**:
   - Theme toggle (Dark/Light mode).
@@ -35,6 +35,17 @@ This is the client-side application for the **Rustic Roots** restaurant manageme
 - **Styling**: Tailwind CSS, React Icons and DaisyUi.
 - **Routing**: React Router
 - **Backend **: Node JS 
+
+
+
+<div align="center">
+  <img  src="https://github.com/Salman-Shaid/Rustic-Roots-resturent/blob/main/rustic-roots-client/src/assets/Faq/Screenshot%202025-02-05%20180541.png"  />
+  <img  src="https://github.com/Salman-Shaid/Rustic-Roots-resturent/blob/main/rustic-roots-client/src/assets/Faq/Screenshot%202025-02-05%20180605.png"  />
+  <img  src="https://github.com/Salman-Shaid/Rustic-Roots-resturent/blob/main/rustic-roots-client/src/assets/Faq/Screenshot%202025-02-05%20180631.png"  />
+  <img  src="https://github.com/Salman-Shaid/Rustic-Roots-resturent/blob/main/rustic-roots-client/src/assets/Faq/Screenshot%202025-02-05%20180659.png"  />
+  <img  src="https://github.com/Salman-Shaid/Rustic-Roots-resturent/blob/main/rustic-roots-client/src/assets/Faq/Screenshot%202025-02-05%20180715.png"  />
+</div>
+
 
 
 
