@@ -5,6 +5,7 @@ import { FcGoogle } from 'react-icons/fc';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
+import bgImage from '../../assets/login/login.png';
 
 const Login = () => {
   const { handleGoogleLogin, handleLogin } = useContext(authContext);
@@ -26,7 +27,7 @@ const Login = () => {
         navigate(location.state?.from || '/');
         toast.success('Logged in successfully!');
       })
-      .catch((err) => {
+      .catch(() => {
         setLoading(false);
         toast.error('Invalid email or password!');
       });
@@ -39,15 +40,23 @@ const Login = () => {
         setLoading(false);
         navigate(location.state?.from || '/');
       })
-      .catch((err) => {
+      .catch(() => {
         setLoading(false);
         toast.error('Google login failed!');
       });
   };
 
   return (
-    <div className="min-h-screen flex justify-center items-center">
-      <div className="card border-2 rounded-xl w-full max-w-lg shrink-0 p-10">
+    <div
+      className="min-h-screen flex justify-center items-center"
+      style={{
+        backgroundImage: `url(${bgImage})`,
+        backgroundRepeat: 'repeat',
+        backgroundSize: 'auto',
+        backgroundPosition: 'center',
+      }}
+    >
+      <div className="card border-2 rounded-xl w-full max-w-lg shrink-0 p-10 bg-white bg-opacity-80 backdrop-blur-md">
         <h2 className="text-2xl font-semibold text-center">Login to Your Account</h2>
         <form onSubmit={handleSubmit} className="card-body text-green-900">
           <div className="form-control">

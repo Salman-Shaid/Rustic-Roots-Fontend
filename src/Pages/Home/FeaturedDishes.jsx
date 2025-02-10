@@ -92,7 +92,7 @@ const FeaturedDishes = () => {
 
                             {/* Button */}
                             <NavLink to="/allFoods">
-                                <button className="btn btn-success rounded-t-none btn-md w-full text-white">
+                                <button className="btn btn-success bg-green-700 rounded-t-none btn-md w-full text-white">
                                     View More...
                                 </button>
                             </NavLink>

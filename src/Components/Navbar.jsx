@@ -18,9 +18,13 @@ const Navbar = () => {
     { path: "/", label: "Home" },
     { path: "/allFoods", label: "All Foods" },
     { path: "/gallery", label: "Gallery" },
-    { path: "/myOrders", label: "My Orders" },
     { path: "/aboutUs", label: "About Us" },
   ];
+  
+  // Conditionally add "My Orders" if the user is logged in
+  if (user) {
+    navLinks.push({ path: "/myOrders", label: "My Orders" });
+  }
 
   return (
     <div

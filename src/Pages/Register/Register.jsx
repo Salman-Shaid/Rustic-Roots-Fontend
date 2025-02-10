@@ -4,6 +4,7 @@ import { authContext } from '../../Providers/AuthProvider';
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import bgImage from "../../assets/login/login.png"
 
 const Register = () => {
   const { handleRegister, manageProfile } = useContext(authContext);
@@ -93,8 +94,16 @@ const Register = () => {
   };
 
   return (
-    <div className="min-h-screen flex justify-center items-center">
-      <div className="card border-2 rounded-xl w-full max-w-lg shrink-0 p-10">
+    <div
+          className="min-h-screen flex justify-center items-center"
+          style={{
+            backgroundImage: `url(${bgImage})`,
+            backgroundRepeat: 'repeat',
+            backgroundSize: 'auto',
+            backgroundPosition: 'center',
+          }}
+        >
+      <div className="card border-2 rounded-xl w-full max-w-lg shrink-0 p-10 bg-white">
         <h2 className="text-2xl font-semibold text-center">Register your account</h2>
         <form onSubmit={handleSubmit} className="card-body text-white">
           <InputField 

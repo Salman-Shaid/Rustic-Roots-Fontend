@@ -6,20 +6,21 @@ const AllFoods = () => {
     const [foods, setFoods] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
-    const [searchQuery, setSearchQuery] = useState(''); 
+    const [searchQuery, setSearchQuery] = useState('');
+    const [sortOrder, setSortOrder] = useState(''); // 'asc' or 'desc'
 
-    
-    const fetchFoods = async (query = '') => {
+    const fetchFoods = async (query = '', sort = '') => {
         setLoading(true);
         setError(null);
         try {
-            const response = await fetch(`https://rustic-roots-server.vercel.app/foods?name=${query}`);
+            const response = await fetch(
+                `https://rustic-roots-server.vercel.app/foods?name=${query}&sort=${sort}`
+            );
             if (!response.ok) {
                 throw new Error('Failed to fetch foods');
             }
             const data = await response.json();
-            console.log(data); 
-            setFoods(data);  
+            setFoods(data);
         } catch (err) {
             setError(err.message);
         } finally {
@@ -27,59 +28,60 @@ const AllFoods = () => {
         }
     };
 
-   
     useEffect(() => {
         document.title = 'All Foods - Rustic Roots';
-        fetchFoods(searchQuery); 
-    }, [searchQuery]); 
+        fetchFoods(searchQuery, sortOrder);
+    }, [searchQuery, sortOrder]);
 
     return (
         <div>
-           
-            <div>
-                <div
-                    className="relative mb-10 h-60 flex items-center justify-center text-white"
-                    style={{
-                        backgroundImage: `url(${imageBackground2})`,
-                        backgroundSize: 'cover',
-                        backgroundPosition: 'center',
-                    }}
-                >
-                    <div className="absolute inset-0 bg-black bg-opacity-40"></div>
-                    <h1 className="hover:text-green-500 relative text-7xl font-bold bottom-10">
-                        Explore a variety of dishes
-                    </h1>
-                    <div className="text-2xl absolute flex items-center mx-auto bottom-10">
-                        <a
-                            href="/"
-                            className="hover:text-green-500 font-semibold text-white transition px-4 py-2 rounded"
-                        >
-                            Home
-                        </a>
-                        <span className="mx-2">||</span>
-                        <a
-                            href="/gallery"
-                            className="font-semibold text-white hover:text-gray-200 transition px-4 py-2 rounded"
-                        >
-                            Food Gallery
-                        </a>
-                    </div>
+            {/* Banner Section */}
+            <div
+                className="relative mb-10 h-60 flex items-center justify-center text-white"
+                style={{
+                    backgroundImage: `url(${imageBackground2})`,
+                    backgroundSize: 'cover',
+                    backgroundPosition: 'center',
+                }}
+            >
+                <div className="absolute inset-0 bg-black bg-opacity-40"></div>
+                <h1 className="hover:text-green-500 relative text-7xl font-bold bottom-10">
+                    Explore a variety of dishes
+                </h1>
+                <div className="text-2xl absolute flex items-center mx-auto bottom-10">
+                    <a href="/" className="hover:text-green-500 font-semibold text-white transition px-4 py-2 rounded">
+                        Home
+                    </a>
+                    <span className="mx-2">||</span>
+                    <a href="/gallery" className="font-semibold text-white hover:text-gray-200 transition px-4 py-2 rounded">
+                        Food Gallery
+                    </a>
                 </div>
             </div>
 
-           
-            <div className="text-center mb-10 text-white">
+            {/* Search and Sorting Section */}
+            <div className="text-center mb-10 text-white flex flex-col md:flex-row justify-center items-center gap-4">
                 <input
                     type="text"
-                    
-                    placeholder=" Search for a dish..."
+                    placeholder="Search for a dish..."
                     value={searchQuery}
-                    onChange={(e) => setSearchQuery(e.target.value)} 
+                    onChange={(e) => setSearchQuery(e.target.value)}
                     className="px-4 py-2 border border-gray-300 rounded-md"
                 />
+
+                {/* Sorting Dropdown */}
+                <select
+                    value={sortOrder}
+                    onChange={(e) => setSortOrder(e.target.value)}
+                    className="px-4 py-2 border border-gray-300 rounded-md"
+                >
+                    <option value="">Sort by</option>
+                    <option value="asc">Price: Low to High</option>
+                    <option value="desc">Price: High to Low</option>
+                </select>
             </div>
 
-            
+            {/* Food Cards Section */}
             <div className="container mx-auto my-20">
                 {loading ? (
                     <div className="text-center">

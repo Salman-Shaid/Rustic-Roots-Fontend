@@ -24,12 +24,13 @@ const Footer = () => {
                     <h6 className="footer-title font-semibold text-lg mb-3">Home</h6>
                     <NavLink to="/allFoods" className="link link-hover block">All Foods</NavLink>
                     <NavLink to="/gallery" className="link link-hover block">Foods Gallery</NavLink>
-                    <NavLink to="/equipments" className="link link-hover block">Gym Equipments</NavLink>
+                    <NavLink to="/" className="link link-hover block">Top Selling Foods</NavLink>
+                    <NavLink to="/" className="link link-hover block">Featured Dishes</NavLink>
                 </div>
 
                 <div>
                     <h6 className="footer-title font-semibold text-lg mb-3">Quick Links</h6>
-                    <NavLink to="/about" className="link link-hover block">About Us</NavLink>
+                    <NavLink to="/aboutUs" className="link link-hover block">About Us</NavLink>
                     <NavLink to="/allFoods" className="link link-hover block">All Foods</NavLink>
                     <NavLink to="/login" className="link link-hover block">Login</NavLink>
                     <NavLink to="/register" className="link link-hover block">Register</NavLink>
