@@ -91,15 +91,15 @@ const Purchase = () => {
     
             if (!orderResponse.ok) {
                 const errorText = await orderResponse.text();
-                console.error('Order Submission Failed:', errorText); // Log detailed error
+                console.error('Order Submission Failed:', errorText); 
                 throw new Error('Failed to place the order');
             }
     
             const orderData = await orderResponse.json();
             console.log('Order successfully placed:', orderData);
     
-            // Redirect to MyOrder page after successful order placement
-            navigate('/myOrders'); // Change '/my-orders' to your actual MyOrder route
+      
+            navigate('/myOrders'); 
     
         } catch (error) {
             console.error('Error during purchase submission:', error);
