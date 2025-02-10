@@ -43,7 +43,7 @@ This is the client-side application for the **Rustic Roots** restaurant manageme
   <img  src="https://github.com/Salman-Shaid/Rustic-Roots-resturent/blob/main/rustic-roots-client/src/assets/Faq/Screenshot%202025-02-05%20180605.png"  />
   <img  src="https://github.com/Salman-Shaid/Rustic-Roots-resturent/blob/main/rustic-roots-client/src/assets/Faq/Screenshot%202025-02-05%20180631.png"  />
   <img  src="https://github.com/Salman-Shaid/Rustic-Roots-resturent/blob/main/rustic-roots-client/src/assets/Faq/Screenshot%202025-02-05%20180659.png"  />
-  <img  src="https://github.com/Salman-Shaid/Rustic-Roots-resturent/blob/main/rustic-roots-client/src/assets/Faq/Screenshot%202025-02-05%20180715.png"  />
+ 
 </div>
 
 
